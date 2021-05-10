@@ -1,0 +1,25 @@
+------------------------------------------------------------------------
+can++ - Freeware for sniffing/simulation of CAN traffic and diagnostics
+Copyright (C) 2011-2021 Thomas Dahlmann
+------------------------------------------------------------------------
+
+Releases Notes
+------------------------------------------------------------------------
+############
+can++ 4.3.2:
+############
+- show device serial and firmare in channel config
+- use OS time for timestamp instead device time for now
+
+############
+can++ 4.3.1:
+############
+- show same CanId on different Channels separately in Overwrite View
+- reset time stamp to zero on every start
+- show filter symbol for data bases in CAN tree view
+- enable/disable channels
+
+############
+can++ 4.3.0:
+############
+- SuperCAN 2-channel support

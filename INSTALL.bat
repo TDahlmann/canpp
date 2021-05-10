@@ -1,0 +1,1 @@
+make_shortcut_on_desktop.bat

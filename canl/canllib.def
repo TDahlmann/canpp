@@ -1,0 +1,13 @@
+LIBRARY "canllib.dll"
+DESCRIPTION 'canllib as a DLL'
+EXETYPE NT
+SUBSYSTEM WINDOWS
+CODE SHARED EXECUTE
+DATA WRITE
+EXPORTS
+   SampleFunction     @1
+   ProcessRxCanMsg    @2
+   RegisterTxCallback @3
+   RegisterPrintCallback @4
+   GetConfig @5
+   TimerCallback @6

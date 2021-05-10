@@ -1,0 +1,12 @@
+[Unit]
+Description=Socket CAN to TCP over WLAN service
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+WorkingDirectory=/home/pi/
+ExecStart=/home/pi/can2win can0
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

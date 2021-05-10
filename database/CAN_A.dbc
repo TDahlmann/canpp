@@ -1,0 +1,30 @@
+BO_ 100 RadarControl: 8 
+ SG_ RC_CRC : 0|8@1+ (1,0) [0|255] "" 
+ SG_ RC_Count : 8|4@1+ (1,0) [0|15] "" 
+ SG_ RC_SIG_1 : 12|1@1+ (1,0) [0|1] "" 
+ SG_ RC_SIG_2 : 13|1@1+ (1,0) [0|1] "" 
+ SG_ RC_SIG_3 : 14|1@1+ (1,0) [0|1] "" 
+ SG_ RC_SIG_4 : 15|1@1+ (1,0) [0|1] "" 
+ SG_ RC_RadarRange: 16|6@1+ (0.025,0) [0|1.300] "meter" 
+ SG_ RC_SIG_6: 22|2@1+ (1,0) [0|3] "" 
+ SG_ RC_Accerlation : 24|11@1+ (0.005,-5.8) [-5.8|3.005] "meter_seconds_square" 
+ 
+ BO_ 200 BatteryUsage: 8 
+ SG_ BU_CRC : 0|8@1+ (1,0) [0|255] "" 
+ SG_ BU_Count : 8|4@1+ (1,0) [0|15] "" 
+ SG_ BU_Current : 12|12@1+ (1,-2047) [-2047|2046] "amper"  
+ SG_ BU_Volatage : 24|12@1+ (0.25,0) [0|1023.25] "volt"  
+ 
+BO_ 300 LockAttempts: 8
+ SG_ LA_CRC : 0|8@1+ (1,0) [0|255] ""  
+ SG_ LA_Count : 8|4@1+ (1,0) [0|15] ""  
+ SG_ LA_Attempts : 63|1@1+ (1,0) [0|1] ""  
+ 
+ BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+ BA_DEF_ SG_  "GenSigStartValue" INT -2147483648 2147483647;
+ BA_ "GenMsgCycleTime" BO_ 100 20;
+ BA_ "GenMsgCycleTime" BO_ 200 100;
+ BA_ "GenMsgCycleTime" BO_ 300 1000;
+ BA_ "GenSigStartValue" SG_ 100 RC_Accerlation 2046;
+ VAL_ 100 RC_Accerlation 2046 "Default" 2047 "Error" ;
+ VAL_ 100 RC_RadarRange 32 "MeanDetect" 50 "UpperBorder" ;

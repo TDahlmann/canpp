@@ -1,0 +1,17 @@
+BO_ 400 BatteryState: 8
+ SG_ BS_CRC : 0|8@1+ (1,0) [0|255] ""
+ SG_ BS_Count : 8|4@1+ (1,0) [0|15] ""
+ SG_ BS_Energy : 12|11@1+ (50,0) [0|102250] "watt_hour"
+ SG_ BS_Charging_Enable : 23|1@1+ (1,0) [0|1] ""
+ SG_ BS_Sig1 : 24|3@1+ (1,0) [0|7] ""
+ SG_ BS_Sig2 : 27|1@1+ (1,0) [0|1] ""
+ SG_ BS_Sig3 : 30|2@1+ (1,0) [0|3] ""
+ SG_ BS_Power : 32|11@1+ (50,0) [0|102250] "watt_hour"
+ SG_ BS_Sig5 : 43|1@1+ (1,0) [0|1] ""
+ SG_ BS_Sig6 : 44|2@1+ (1,0) [0|3] ""
+ SG_ BS_Resistance : 46|12@1+ (5,0) [0|20465] "kohm"
+ 
+ BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+ BA_DEF_ SG_  "GenSigStartValue" INT -2147483648 2147483647;
+ BA_ "GenMsgCycleTime" BO_ 400 100;
+ 
