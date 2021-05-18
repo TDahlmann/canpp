@@ -6,6 +6,15 @@ Copyright (C) 2011-2021 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.3:
+############
+- use new SuperCAN DLL of release 1.0.1
+- fix crashing on transmit when no SuperCAN is connected
+- TX dialog: forbid messages longer than 8 bytes if channel is not configured for CAN FD
+- TX dialog: set FDF bit if dlc is changed to value greater than 8
+- fix errors in channel mapping
+
+############
 can++ 4.3.2:
 ############
 - show device serial and firmare in channel config
