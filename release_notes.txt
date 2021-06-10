@@ -6,6 +6,11 @@ Copyright (C) 2011-2021 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.5:
+############
+- fix timing problems for new Windows 10 versions beginning with release 2004
+
+############
 can++ 4.3.4:
 ############
 - Extended CanId's: fix not showing signals in Trace View
