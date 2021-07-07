@@ -6,6 +6,23 @@ Copyright (C) 2011-2021 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.5:
+############
+- fix timing problems for new Windows 10 versions beginning with release 2004
+
+############
+can++ 4.3.4:
+############
+- Extended CanId's: fix not showing signals in Trace View
+- Tx Dialog: 
+    - handle mismatches between DLC and Flags and CAN type
+    - fix busy loop on disabling a channel (thread was haning)         
+- Signal Wave Configurator: 
+	- check "Start value" and "End value" against signal min and max
+    - "Return" key does not close windows anymore
+    - various fixes to "Counter" wave type
+
+############
 can++ 4.3.3:
 ############
 - use new SuperCAN DLL of release 1.0.1
