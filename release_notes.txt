@@ -6,6 +6,27 @@ Copyright (C) 2011-2021 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.9:
+############
+- SuperCAN: use channel name from device info
+- added ARXML Support (Experimental), missing signals for secured PDU's
+
+############
+can++ 4.3.8:
+############
+- add statistics dialog including bus state (bus load for CAN FD still missing)
+- show error frames for CAN FD too
+- left aligned CAN data column in trace view
+- add "x" to extended CAN Id's in trace view
+- in delta time mode show time difference for last message of same CAN Id and channel (cycle time)
+- bug fix DBC read to avoid multiple signals with same name per msg
+
+############
+can++ 4.3.6:
+############
+- fix Null pointer crashes after deleting TX list entries
+
+############
 can++ 4.3.5:
 ############
 - fix timing problems for new Windows 10 versions beginning with release 2004
