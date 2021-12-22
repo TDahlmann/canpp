@@ -1,16 +1,10 @@
 # CAN++
 
 ## Overview
-CAN++ is a free Windows program for receiving and transmitting CAN bus messages (CAN Classic and CAN FD) for using with [SuperCAN](https://github.com/jgressmann/supercan)/[USB_CAN-FD](https://github.com/RudolphRiedel/USB_CAN-FD) or without CAN hardware (virtual bus). After import of CAN data base files (*.dbc or *.kcd) CAN signals are shown in symbolic form. In addition they can be shown as graphics (wave forms).
+CAN++ is a free Windows program for receiving and transmitting CAN bus messages (CAN Classic and CAN FD) for using with [SuperCAN](https://github.com/jgressmann/supercan)/[USB_CAN-FD](https://github.com/RudolphRiedel/USB_CAN-FD) or without CAN hardware (virtual bus). After import of CAN data base files (*.dbc, *.arxml or *.kcd) CAN signals are shown in symbolic form. In addition they can be shown as graphics (wave forms).
 Note: *.kcd data base format is broken currently
 
 Furthermore CAN simulation is possible by programming CAN behaviour in C++. 
-
-CAN diagnostics:
-- faultmemory
-- measurement data
-- identification
-- import PDX files
 
 CAN++ can be just started (no installation).
 
@@ -39,6 +33,19 @@ CAN traces can be generated, imported and replayed (*.asc format).
 - integrated IDE and integrated C++ Compiler (DMC)
 
 ![Main screen](doc/screens/canpr_context_with_build.jpg)
+
+## CAN statistics
+
+![Main screen](doc/screens/statistics.jpg)
+
+## CAN diagnostics
+- faultmemory
+- measurement data
+- identification
+- import PDX files
+
+![Main screen](doc/screens/faultmem.jpg)
+![Main screen](doc/screens/measurements.jpg)
 
 ## Installation
 
