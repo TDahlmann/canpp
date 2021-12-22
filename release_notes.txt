@@ -6,10 +6,17 @@ Copyright (C) 2011-2021 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.10:
+############
+- ARXML support ready (added support for secured PDU, MUX PDU, ...)
+- bug fixes for MUX messages
+- bug fix CANFD trace import for message of len lower or equal 8 bytes
+
+############
 can++ 4.3.9:
 ############
 - SuperCAN: use channel name from device info
-- added ARXML Support (Experimental), missing signals for secured PDU's
+- added ARXML Support
 
 ############
 can++ 4.3.8:
@@ -18,12 +25,19 @@ can++ 4.3.8:
 - show error frames for CAN FD too
 - left aligned CAN data column in trace view
 - add "x" to extended CAN Id's in trace view
+- support for Ixxat simplyCAN device
 - in delta time mode show time difference for last message of same CAN Id and channel (cycle time)
 - bug fix DBC read to avoid multiple signals with same name per msg
 
 ############
+can++ 4.3.7:
+############
+- add HW index to Vector channel name
+
+############
 can++ 4.3.6:
 ############
+- add CAN FD support for can2win (for SocketCAN on Raspi, etc.)
 - fix Null pointer crashes after deleting TX list entries
 
 ############
