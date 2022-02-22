@@ -9,7 +9,6 @@
 
 #include "canllib.h"
 
-
 // global variables
 int counter = 0;
 unsigned int currentRaw; 
@@ -26,11 +25,11 @@ MsTimer myMsTimer(onMyMsTimer);
 ////////////////////////////////////////
 void onStart()
 {
-    print("onStart() called\n");
-    // start 1 second timer
-    setTimer(myTimer, 1);
-    // start 100 ms timer
-    setTimer(myMsTimer, 100);
+	print("onStart() called\n");
+	// start 1 second timer
+	setTimer(myTimer, 1);
+	// start 100 ms timer
+	setTimer(myMsTimer, 100);
 }
 
 ////////////////////////////////////////
@@ -38,7 +37,27 @@ void onStart()
 ////////////////////////////////////////
 void onStop()
 {
-    print("onStop() called\n");
+	print("onStop() called\n");
+}
+
+////////////////////////////////////////
+// actions triggered by key press in
+// CAN++ main window  (optionally)
+////////////////////////////////////////
+void onKey(char key)
+{
+	if (key == 'a')
+	{
+		message m(0xaa);
+		m.DLC = 8;
+		send(m);
+	}
+	else if (key == 'b')
+	{
+		message m(0xbb);
+		m.DLC = 8;
+		send(m);
+	}
 }
  
 ////////////////////////////////////////
@@ -46,51 +65,55 @@ void onStop()
 ////////////////////////////////////////
 void RadarControl::onMessage()
 {
-    // define message BatteryUsage
-    BatteryUsage m;
+	// look on CAN 1 only
+	if (CAN != 1)
+		return;
 
-    ////////////////////////////////////
-    // signal assignments
-    // note: "this->" can be omitted
-    ////////////////////////////////////
+	// define message BatteryUsage
+	BatteryUsage m;
 
-    // set signal raw value by "="
-    m.BU_Count = counter;
+	////////////////////////////////////
+	// signal assignments
+	// note: "this->" can be omitted
+	////////////////////////////////////
 
-    // set signal physical value
-    m.BU_Volatage.setPhys(20.5 / counter );
+	// set signal raw value by "="
+	m.BU_Count = counter;
 
-    // set signal raw value from RX message by "="
-    m.BU_CRC = this->RC_CRC;
+	// set signal physical value
+	m.BU_Volatage.setPhys(20.5 / counter );
 
-    // set signal raw value from RX message by set()
-    currentRaw = this->RC_Accerlation.getRaw();
-    m.BU_Current.setRaw(currentRaw); // also: set()
-    
-    // set message byte at index 6 from RX message
-    byteVal = this->getByte(5);
-    m.setByte(6, byteVal); // also: m.byte(6) = byte 
+	// set signal raw value from RX message by "="
+	m.BU_CRC = this->RC_CRC;
 
-    ////////////////////////////////////
-    // send on CAN
-    ////////////////////////////////////
+	// set signal raw value from RX message by set()
+	currentRaw = this->RC_Accerlation.getRaw();
+	m.BU_Current.setRaw(currentRaw); // also: set()
+	
+	// set message byte at index 6 from RX message
+	byteVal = this->getByte(5);
+	m.setByte(6, byteVal); // also: m.byte(6) = byte 
 
-    // output BatteryUsage on default channel
-    send(m);
+	////////////////////////////////////
+	// send on CAN
+	////////////////////////////////////
 
-    // send message with CAN ID 0x123 on channel 2  
-    message m2(0x123);
-    m2.CAN = 2;
-    m2.DLC = 8;
-    send(m2);
+	// output BatteryUsage on default channel
+	send(m);
+
+	// send message with CAN ID 0x123 on channel 2  
+	message m2(0x123);
+	m2.CAN = 2;
+	m2.DLC = 8;
+	send(m2);
    
-    // print in can++ print window
-    print("Received message with Id = %x", this->ID);
+	// print in can++ print window
+	print("Received message with Id = %x", this->ID);
 
-    // handle counter variable
-    counter = counter + 1;
-    if (counter == 16)
-        counter = 0;   
+	// handle counter variable
+	counter = counter + 1;
+	if (counter == 16)
+		counter = 0;   
 }
 
 
@@ -99,11 +122,11 @@ void RadarControl::onMessage()
 /////////////////////////////////////////////////////////////////////
 void BatteryUsage::onMessage()
 {
-    // @BatteryUsage::BatteryUsage_Count changed code here:
-    if (BU_Count.changed())
-    {
-        print("New BU_Count = %d", BU_Count.getRaw());
-    }
+	// @BatteryUsage::BatteryUsage_Count changed code here:
+	if (BU_Count.changed())
+	{
+		print("New BU_Count = %d", BU_Count.getRaw());
+	}
 
 }
 
@@ -114,7 +137,7 @@ void BatteryUsage::onMessage()
 /////////////////////////////////////////////////////////////////////
 void onAllMessages(message &m)
 {
-    canId = m.ID;
+	canId = m.ID;
 }
 
 /////////////////////////////////////////////////////////////////////
@@ -122,25 +145,25 @@ void onAllMessages(message &m)
 /////////////////////////////////////////////////////////////////////
 void onMyTimer()
 {
-    print("1 sec timer");
+	print("1 sec timer");
 
-    BatteryState m;
+	BatteryState m;
 
-    m.BS_Count = counter;
-    send(m);    
+	m.BS_Count = counter;
+	send(m);	
 
-    // restart timer for peridoc occurrence           
-    setTimer(myTimer, 1);
+	// restart timer for peridoc occurrence		   
+	setTimer(myTimer, 1);
 }
 
 void onMyMsTimer()
 {
-    LockAttempts m1;
+	LockAttempts m1;
 	
-    m1.LA_Count = counter;
-    send(m1);
+	m1.LA_Count = counter;
+	send(m1);
 
-    // restart timer for peridoc occurrence      
-    setTimer(myMsTimer, 100);
+	// restart timer for peridoc occurrence	  
+	setTimer(myMsTimer, 100);
 }
 

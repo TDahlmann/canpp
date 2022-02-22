@@ -27,6 +27,7 @@
 void onAllMessages(message &m);
 void onStart();
 void onStop();
+void onKey(char key);
 extern Timer* g_timerArray[];
 extern CanlConfig g_canlConfig;
 extern Timer myTimer;
@@ -68,6 +69,8 @@ void msgRxInit(void)
     OnStartFunc = onStart;
     OnStopFunc = onStop;
     msgRxFuncAll = onAllMessages;
+
+    OnKeyFunc = onKey;
 
     g_canlConfig.timerUsed = 1;
     g_canlConfig.numTimers = 2;

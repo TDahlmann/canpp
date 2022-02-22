@@ -114,6 +114,7 @@ public:
     //unsigned char & byte(int ix);
     void bufferToSignals(void);
     void signalsToBuffer(void);
+    void applySignalsStartValue(void);
     void setByte(int ix, unsigned char byte);
     unsigned char getByte(int ix);
     
@@ -209,6 +210,8 @@ public:
 	bool m_isSigned;
 	bool m_isFloat;
 	int m_prec;    
+    unsigned long m_startVal;
+
     
 };
 

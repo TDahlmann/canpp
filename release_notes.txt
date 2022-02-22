@@ -8,9 +8,13 @@ Releases Notes
 ############
 can++ 4.3.10:
 ############
-- ARXML support ready (added support for secured PDU, MUX PDU, ...)
+- add filter for raw CAN Id's which are not in a data base
+- onKey() support in C++ CAN simulation
+- "Log" Button (log CAN traffic to file) to reflect Log flag in "Settings"
+- ARXML: add import for MUX messages, other fixes
 - bug fixes for MUX messages
 - bug fix CANFD trace import for message of len lower or equal 8 bytes
+- minimize PDX/ODX memory consumption
 
 ############
 can++ 4.3.9:
@@ -32,7 +36,7 @@ can++ 4.3.8:
 ############
 can++ 4.3.7:
 ############
-- add HW index to Vector channel name
+- add HW index to channel name
 
 ############
 can++ 4.3.6:

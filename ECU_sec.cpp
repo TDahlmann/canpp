@@ -10,12 +10,15 @@
 
 void BatteryState::onMessage()
 {
-    print("BatteryState received on CAN %d", this->CAN);
+	// look on CAN 1 only
+	if (CAN != 1)
+		return;
 
-    message m(0x456);
-    m.setByte(0, this->BS_Count.get());
-    m.DLC = 8;
-    send(m);
+	print("BatteryState received on CAN %d", this->CAN);
+
+	message m(0x456);
+	m.setByte(0, this->BS_Count.get());
+	m.DLC = 8;
+	send(m);
 }
-
 

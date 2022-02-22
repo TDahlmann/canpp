@@ -11,3 +11,4 @@ EXPORTS
    RegisterPrintCallback @4
    GetConfig @5
    TimerCallback @6
+   CanlOnKey @7

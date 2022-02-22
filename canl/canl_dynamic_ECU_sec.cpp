@@ -50,6 +50,8 @@ void msgRxInit(void)
     OnStopFunc = NULL;
     msgRxFuncAll = NULL;
 
+    OnKeyFunc = NULL;
+
     g_canlConfig.timerUsed = 0;
     g_canlConfig.numTimers = 0;
 
