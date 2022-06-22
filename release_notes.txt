@@ -6,6 +6,16 @@ Copyright (C) 2011-2021 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.11:
+############
+- bug fix trace import for CANFD (one byte was skipped)
+- bug fix delta time mode
+- support BLF trace import
+- extreme speed improvement for ASC trace import (40x faster)
+- drag and drop for DBC, ARXML, Trace files
+- progress bar for import of DBC, ARXML, Trace files
+
+############
 can++ 4.3.10:
 ############
 - add filter for raw CAN Id's which are not in a data base

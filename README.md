@@ -6,7 +6,7 @@ Note: *.kcd data base format is broken currently
 
 Furthermore:
 - **CAN simulation** is possible by programming CAN behaviour in C++. 
-- **CAN traces** can be generated, imported and replayed (*.asc format).
+- **CAN traces** can be generated, imported and replayed (*.asc format, *.blf can be imported).
 - **Diagnostics** can be performed (PDX import, fault memory, measurement and identification data)
 
 CAN++ can be just started (no installation).
@@ -15,7 +15,7 @@ CAN++ can be just started (no installation).
 ![Main screen](doc/screens/graph.jpg)
 
 ## Traces
-CAN traces can be generated, imported and replayed (*.asc format).
+CAN traces can be generated, imported and replayed (*.asc format). Import and replay is possible with BLF files too (*.blf).
 
 ## CAN transmit
 
