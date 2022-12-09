@@ -12,7 +12,9 @@ There are several devices which are supported by SuperCAN firmware and can be us
 - Open Source Hardware: [USB_CAN-FD](https://github.com/RudolphRiedel/USB_CAN-FD)
 - Off the shelf: [Adafruit Feather M4 CAN Express](https://www.adafruit.com/product/4759) (simple [drag & drop](#tips) of firmware)
 
-CAN++ can be just started (no installation).
+CAN++ can be just started (no installation).   
+The user manual is located in sub folder `doc/user_manual` (Markdown and HTML version, work in progress). 
+
 
 ![Main screen](doc/screens/main2.jpg)
 ![Main screen](doc/screens/graph.jpg)
