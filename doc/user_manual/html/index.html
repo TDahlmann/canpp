@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>CAN++ User Manual</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">CAN++ User Manual</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#can-user-manual" class="nav-link">CAN++ User Manual</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#overview" class="nav-link">Overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#can-hardware-configuration" class="nav-link">CAN hardware configuration</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#options" class="nav-link">Options</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="can-user-manual">CAN++ User Manual</h1>
+<h2 id="overview">Overview</h2>
+<p>CAN++ is a free Windows program for receiving, transmitting and analyzing (<em>.asc, </em>.blf) CAN bus messages (CAN Classic and <strong>CAN FD</strong>) for using with <a href="https://github.com/jgressmann/supercan">SuperCAN</a> devices or without CAN hardware (virtual bus). After import of CAN data base files (<em>.</em><em>dbc</em><em>, </em>.<strong>arxml</strong>) CAN signals are shown in symbolic form. Signals can be presented as graphics (wave forms) too.</p>
+<p>Furthermore:
+- <strong>CAN simulation</strong> is possible by programming CAN behaviour in C++. 
+- <strong>CAN traces</strong> can be generated, imported and replayed (<em>.asc format, </em>.blf can be imported).
+- <strong>Diagnostics</strong> can be performed (PDX import, fault memory, measurement and identification data)</p>
+<p>There are several devices which are supported by SuperCAN firmware and can be used with CAN++. For example:
+- Open Source Hardware: <a href="https://github.com/RudolphRiedel/USB_CAN-FD">USB_CAN-FD</a>
+- Off the shelf: <a href="https://www.adafruit.com/product/4759">Adafruit Feather M4 CAN Express</a> (simple <a href="#tips">drag &amp; drop</a> of firmware)</p>
+<p>CAN++ can be just started (no installation).</p>
+<h2 id="can-hardware-configuration">CAN hardware configuration</h2>
+<h3 id="activate-hardware">Activate hardware</h3>
+<p>Select connected hardware from list</p>
+<pre><code>Settings =&gt; Hardware Select 
+</code></pre>
+<h3 id="change-hardware-configuration">Change hardware configuration</h3>
+<p>Go to</p>
+<pre><code>Settings =&gt; Channel Configuration
+</code></pre>
+<p>Select a channel in the list to see its parameters. Pushing <strong>Apply</strong> will set the parameters. The checkbox determines whether the channel is active or not.</p>
+<p><img alt="Channel Configuration" src="img/channel_config.jpg" /></p>
+<h4 id="dialog-data">Dialog data</h4>
+<table>
+<thead>
+<tr>
+<th>widget</th>
+<th>function</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Channel Number</td>
+<td>logical channel number</td>
+<td>This number is used in all other dialogs. So this number maps to the selected physical channel in the list above.</td>
+</tr>
+<tr>
+<td>Type</td>
+<td>CAN type</td>
+<td>CAN classic or CANFD type</td>
+</tr>
+<tr>
+<td>Import from DB</td>
+<td>import channel settings from DBC</td>
+<td></td>
+</tr>
+<tr>
+<td>Adjust bit timings</td>
+<td>enable bit timing config</td>
+<td>bit timing parameters widget show up</td>
+</tr>
+<tr>
+<td>Calculate</td>
+<td>calculate bit timing values</td>
+<td>values are calculated based on Sample Point value</td>
+</tr>
+<tr>
+<td>Reset</td>
+<td>undo changes in bit timings</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="options">Options</h2>
+<p>Go to</p>
+<pre><code>Settings =&gt; Options
+</code></pre>
+<p><img alt="Options" src="img/options.jpg" /></p>
+<h3 id="diagnostic-options">Diagnostic options</h3>
+<table>
+<thead>
+<tr>
+<th>widget</th>
+<th>function</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set Can Ids manually</td>
+<td>assign Diagnostic CAN Ids</td>
+<td>allows setting  CAN Ids for RX/TX. Otherwise CAN Ids are taken from ODX</td>
+</tr>
+<tr>
+<td>CAN Channel</td>
+<td>channel for diagnostics</td>
+<td></td>
+</tr>
+<tr>
+<td>Log Diags to file</td>
+<td>log diagnostic data to folder <strong>log</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="can-sniffer-options">CAN sniffer options</h3>
+<table>
+<thead>
+<tr>
+<th>widget</th>
+<th>function</th>
+<th>notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show RAW values</td>
+<td>show signal raw</td>
+<td>beside physical signal value show raw bus signal value too</td>
+</tr>
+<tr>
+<td>Show Error Frames</td>
+<td>error frame enable</td>
+<td>if enabled trace performance may go down</td>
+</tr>
+<tr>
+<td>Log CAN to file</td>
+<td>log CAN data to folder <strong>log</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Start Trigger</td>
+<td>Start CAN Id trigger</td>
+<td>CAN Id which triggers trace/simulation start, which is chosen in CAN DB tree in left main window by right mouse click</td>
+</tr>
+<tr>
+<td>Stop Trigger</td>
+<td>Stop CAN Id trigger</td>
+<td>CAN Id which triggers trace/simulation stop, which is chosen in CAN DB tree in left main window by right mouse click</td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.4.2
+Build Date UTC : 2022-12-09 12:57:09.689084+00:00
+-->
