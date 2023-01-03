@@ -58,11 +58,39 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#can-data-bases" class="nav-link">CAN data bases</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#can-transmit" class="nav-link">CAN transmit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#can-hardware-configuration" class="nav-link">CAN hardware configuration</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#options" class="nav-link">Options</a>
+            <li class="nav-item" data-level="2"><a href="#remote-control" class="nav-link">Remote control</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#filtering" class="nav-link">Filtering</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#can-signal-graphs" class="nav-link">CAN signal graphs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#can-programming-in-c" class="nav-link">CAN programming in C++</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#can-diagnostics" class="nav-link">CAN diagnostics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#can-statistics" class="nav-link">CAN statistics</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -76,14 +104,45 @@
 <h1 id="can-user-manual">CAN++ User Manual</h1>
 <h2 id="overview">Overview</h2>
 <p>CAN++ is a free Windows program for receiving, transmitting and analyzing (<em>.asc, </em>.blf) CAN bus messages (CAN Classic and <strong>CAN FD</strong>) for using with <a href="https://github.com/jgressmann/supercan">SuperCAN</a> devices or without CAN hardware (virtual bus). After import of CAN data base files (<em>.</em><em>dbc</em><em>, </em>.<strong>arxml</strong>) CAN signals are shown in symbolic form. Signals can be presented as graphics (wave forms) too.</p>
-<p>Furthermore:
-- <strong>CAN simulation</strong> is possible by programming CAN behaviour in C++. 
-- <strong>CAN traces</strong> can be generated, imported and replayed (<em>.asc format, </em>.blf can be imported).
-- <strong>Diagnostics</strong> can be performed (PDX import, fault memory, measurement and identification data)</p>
+<p>Furthermore:  </p>
+<ul>
+<li><strong>CAN simulation</strong> is possible by programming CAN behaviour in C++.  </li>
+<li><strong>CAN traces</strong> can be generated, imported and replayed (<em>.asc format, </em>.blf can be imported).  </li>
+<li><strong>Diagnostics</strong> can be performed (PDX import, fault memory, measurement and identification data)  </li>
+</ul>
 <p>There are several devices which are supported by SuperCAN firmware and can be used with CAN++. For example:
 - Open Source Hardware: <a href="https://github.com/RudolphRiedel/USB_CAN-FD">USB_CAN-FD</a>
 - Off the shelf: <a href="https://www.adafruit.com/product/4759">Adafruit Feather M4 CAN Express</a> (simple <a href="#tips">drag &amp; drop</a> of firmware)</p>
 <p>CAN++ can be just started (no installation).</p>
+<h2 id="can-data-bases">CAN data bases</h2>
+<p>CAN data bases files (<em>.dbc, </em>.arxml) can be imported via menu:</p>
+<pre><code>CAN =&gt; CAN Data Base =&gt; Import... 
+</code></pre>
+<p>or in the left tree view in the main window by:  </p>
+<ul>
+<li>right mouse click and "Import Data Base..."</li>
+<li>drag and drop data base where multiple data base files can be dropped at once</li>
+</ul>
+<h2 id="can-transmit">CAN transmit</h2>
+<p>CAN messages can be transmitted via menu:</p>
+<pre><code>CAN =&gt; Transmit...
+</code></pre>
+<p>The features are:</p>
+<ul>
+<li>send options:<ul>
+<li>cyclic</li>
+<li>once</li>
+<li>with time offset</li>
+<li>manual by key</li>
+<li>manual by click on button "Now"</li>
+</ul>
+</li>
+<li>define signals as raw or physical values  </li>
+<li>or define signals with wave configurator  </li>
+</ul>
+<p><img alt="Tx" src="img/tx.jpg" /></p>
+<p>By clicking on cell in column "<strong>Wave</strong>" for a signal a wave form can be specified for a signal instead of using a static value:</p>
+<p><img alt="Tx wave" src="img/wave.jpg" /></p>
 <h2 id="can-hardware-configuration">CAN hardware configuration</h2>
 <h3 id="activate-hardware">Activate hardware</h3>
 <p>Select connected hardware from list</p>
@@ -135,10 +194,18 @@
 <td>undo changes in bit timings</td>
 <td></td>
 </tr>
+<tr>
+<td>## Options</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Go to</td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<h2 id="options">Options</h2>
-<p>Go to</p>
 <pre><code>Settings =&gt; Options
 </code></pre>
 <p><img alt="Options" src="img/options.jpg" /></p>
@@ -205,7 +272,76 @@
 <td>CAN Id which triggers trace/simulation stop, which is chosen in CAN DB tree in left main window by right mouse click</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<h2 id="remote-control">Remote control</h2>
+<p>CAN++ can be remote controlled. To do so start CAN++ with option <code>-server</code> on command line:</p>
+<pre><code>can++.exe -server
+</code></pre>
+<p>Currently following actions can be taken:  </p>
+<ul>
+<li>Start CAN bus  </li>
+<li>Stop CAN bus  </li>
+<li>
+<p>Send a generic command to C++ simulation, which can be used to trigger self-defined actions, examples may be:  </p>
+<ul>
+<li>call a test function  </li>
+<li>set a global variable to switch behaviour  </li>
+<li>send a CAN message provided by command string  </li>
+<li>etc.  </li>
+</ul>
+</li>
+</ul>
+<p>Please see client example source code (Python, C# and C++) in folder examples/remote_control.</p>
+<h2 id="filtering">Filtering</h2>
+<p>Filtering is done by the check boxes in the left tree view in the main window. If a check box is deselected than corresponding data base, can message or channel is filtered out in trace view window. Apart from that the check boxes for signals work es enable/disable for graphical view.</p>
+<h2 id="can-signal-graphs">CAN signal graphs</h2>
+<p>CAN signals can be shown as graphs by:</p>
+<pre><code>CAN =&gt; Graph...
+</code></pre>
+<p><img alt="Signal graphs" src="img/graph.jpg" /></p>
+<p>Enabling signals as graphs is done by the check boxes in the left tree view in the main window.</p>
+<h2 id="can-programming-in-c">CAN programming in C++</h2>
+<p>CAN++ comes with an IDE and an integrated C++ compiler. So not further installation is needed. For each C++ file a separate DLL will be created on compiling. Each DLL is loaded when pushing button <strong>Start</strong> in CAN++. Please have a look at the example C++ file "<strong>ECU_main.cpp</strong>" in folder examples/simulation to see the features of CAN programming which are:</p>
+<ul>
+<li>second and milisecond timers (can be used to send cyclic messages for instance)</li>
+<li>react on messages on bus (::onMessage())</li>
+<li>react on signal changes</li>
+<li>print messages (print window in CAN++: "CAN" =&gt; "Print Output...")</li>
+<li>react on key presses</li>
+<li>react on commands received from remote client program (See chapter "Remote control")</li>
+</ul>
+<p>Instead of the CAN++ IDE you can use your own of course. After first compiling of code CAN++ generates C++ classes for all CAN messages and signals (see canl/canl_data.cpp) so another IDE will give context input support too.</p>
+<p>C++ files are managed by:</p>
+<pre><code>CAN =&gt; Programming
+</code></pre>
+<p><img alt="CAN programming" src="img/programming.jpg" /></p>
+<p>The checkbox <strong>Active</strong> is used to enable/disable CAN simulation by C++. Files can be imported or created. Existing files can be double clicked to open the IDE. A specific Channel can be selected from drop down in column <strong>Channel</strong>. Default "All" means that all received CAN traffic is routed to corresponding C++ file.</p>
+<p>In the IDE you get context drop down menus for CAN data base variables like in following image:</p>
+<p><img alt="CAN programming IDE with context drop down" src="img/programming_ide.jpg" /></p>
+<p>Furthermore by right click at the cursor position you get a drop down menu with "<strong>Insert Database Element</strong>" to select a CAN message from Database Browser.  </p>
+<p>To compile all C++ files do:</p>
+<pre><code>Compile =&gt; Compile All
+</code></pre>
+<p>or press on the green arrow icon in the toolbar:</p>
+<p><img alt="CAN programming compile all" src="img/programming_compile.jpg" /></p>
+<p>Compiler errors will be shown in the "<strong>Output</strong>" window. By double clicking on a red error message cursor will jump to the corresponding line in the editor.</p>
+<h2 id="can-diagnostics">CAN diagnostics</h2>
+<p>Following CAN diagnostics can be performed:  </p>
+<ul>
+<li>faultmemory (read and clear)</li>
+<li>measurement data (cyclic and single read)</li>
+<li>identification</li>
+<li>import PDX files</li>
+</ul>
+<p>Fault memory window:</p>
+<p><img alt="Fault memory" src="img/faultmem.jpg" /></p>
+<p>Measurements window:</p>
+<p><img alt="Measurements" src="img/measurements.jpg" /></p>
+<h2 id="can-statistics">CAN statistics</h2>
+<p>CAN statistics are show in separate window by:</p>
+<pre><code>CAN =&gt; Statistics
+</code></pre>
+<p><img alt="Statistics" src="img/statistics.jpg" /></p></div>
             </div>
         </div>
 
@@ -286,5 +422,5 @@
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2022-12-09 12:57:09.689084+00:00
+Build Date UTC : 2023-01-03 10:26:31.736003+00:00
 -->

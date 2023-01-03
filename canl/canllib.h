@@ -57,6 +57,7 @@ class CanlMessage;
 
 extern void (*msgRxFuncAll)(message& m);
 extern void (*OnKeyFunc)(char key);
+extern void (*OnCommandFunc)(char* cmd, int len);
 extern void (*OnStartFunc)(void);
 extern void (*OnStopFunc)(void);
 
@@ -66,6 +67,7 @@ typedef int (WINAPI *CallbackFuncTxMsg)(int);
 typedef void (WINAPI *CanlTxMessageCallback)(CanlMessage*);
 typedef void (WINAPI *CanlPrintCallback)(char*);
 
+typedef void (WINAPI* CanlOnCommand)(char*, int);
 typedef void (WINAPI *CanlRxMessage)(CanlMessage*);
 typedef void (WINAPI* CanlOnKeyFunc)(char);
 typedef void (WINAPI *CanlRegisterTxCallback)(CanlTxMessageCallback);
@@ -82,6 +84,7 @@ typedef void (WINAPI *CanlTimerCallback)(void);
 
 // exported funcs
 CANLLIBAPI int WINAPI SampleFunction(CallbackFunc Callback, int, int);
+CANLLIBAPI int WINAPI CommandFunction(char* command, int len);
 CANLLIBAPI void WINAPI ProcessRxCanMsg(CanlMessage* rxMsg);
 CANLLIBAPI void WINAPI CanlOnKey(char key);
 CANLLIBAPI void WINAPI RegisterTxCallback(CanlTxMessageCallback callback, CanlMessage* txMsg);

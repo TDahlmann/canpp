@@ -1,10 +1,24 @@
 ------------------------------------------------------------------------
 can++ - Freeware for sniffing/simulation of CAN traffic and diagnostics
-Copyright (C) 2011-2021 Thomas Dahlmann
+Copyright (C) 2011-2023 Thomas Dahlmann
 ------------------------------------------------------------------------
 
 Releases Notes
 ------------------------------------------------------------------------
+############
+can++ 4.3.12:
+############
+- remote control for start, stop and generic commands 
+  (see Python, C#, C++ pipe client examples)
+- added channel filter in main window (in DB tree view)
+- TX window: use key to send a message
+- Start/Stop with F7/F8 keys
+- bug fixes for trace reading and showing
+- bug fixes for C++ simulation:
+	- deactivate not used timers
+	- onStart() and onStop() fixes
+- user manual
+
 ############
 can++ 4.3.11:
 ############
