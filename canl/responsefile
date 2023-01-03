@@ -1,1 +1,1 @@
-D:\canpp\canpp19\_github\canl\canllib.obj D:\canpp\canpp19\_github\canl\canl_base.obj D:\canpp\canpp19\_github\canl_data.obj ECU_sec.cpp D:\canpp\canpp19\_github\canl\canl_dynamic_ECU_sec.cpp D:\canpp\canpp19\_github\canl\canllib.def kernel32.lib winmm.lib
+D:\canpp\canpp19\_github\canl\canllib.obj D:\canpp\canpp19\_github\canl\canl_base.obj D:\canpp\canpp19\_github\canl_data.obj examples\simulation\ECU_sec.cpp D:\canpp\canpp19\_github\canl\canl_dynamic_ECU_sec.cpp D:\canpp\canpp19\_github\canl\canllib.def kernel32.lib winmm.lib
