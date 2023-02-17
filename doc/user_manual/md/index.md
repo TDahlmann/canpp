@@ -15,6 +15,57 @@ There are several devices which are supported by SuperCAN firmware and can be us
 
 CAN++ can be just started (no installation).
 
+## Trace view
+
+![Trace view](img/main3.jpg)
+
+In trace view following features can be used:
+
+- toggle between **update view** and **stream view** ![stream view](img/toolbar_stream_view.jpg)
+    - update view: displays each message on one row an updates its values
+    - stream view: one row for each incoming message, so it is filling the screen quickly (scroll view)
+
+- switch on **delta time mode** ![stream view](img/toolbar_delta_time.jpg) so time values show the difference to last message of same Id. So this shows the cycle time.
+    
+- sort view by clicking on headers of each column
+
+- right click shows menu to:
+    - clear view
+    - "copy all" => copy trace view contents to clip board
+    - import a trace
+    - "Go to..." => go to a certain time in stream view
+
+## Import Trace file
+
+Trace files (.asc or .blf) can be imported and are shown in trace window. Via menu:
+~~~ 
+CAN => Trace import... 
+~~~
+or by right clicking in trace view window
+
+Also signals from trace can be shown in graphical view either by:  
+    1. pressing **Reload** button in graphn windows after import  
+    2. selecting signals for graphical showing before import (checkbox in main window left tree view)  
+
+Option 2. is the best option for big trace files
+
+## Replay Trace file
+Trace files (.asc or .blf) can be imported and replayed. Via menu:
+~~~ 
+CAN => Replay => Trace file... 
+~~~
+
+Loop mode can be set to replay the file continuously (on reaching end of file it is started from beginning):
+~~~ 
+CAN => Replay => Loop
+~~~
+
+Replay buffer can be cleared by:
+~~~ 
+CAN => Replay => Clear replay buffer
+~~~
+
+
 ## CAN data bases
 
 CAN data bases files (*.dbc, *.arxml) can be imported via menu:
@@ -27,12 +78,12 @@ or in the left tree view in the main window by:
 - right mouse click and "Import Data Base..."
 - drag and drop data base where multiple data base files can be dropped at once
 
-
 ## CAN transmit
 CAN messages can be transmitted via menu:
 ~~~ 
 CAN => Transmit...
 ~~~
+or by toolbar ![tx](img/toolbar_tx.jpg)
 
 The features are:
 
@@ -50,6 +101,22 @@ The features are:
 By clicking on cell in column "**Wave**" for a signal a wave form can be specified for a signal instead of using a static value:
 
 ![Tx wave](img/wave.jpg)
+
+### Add a CAN message to transmit list
+By pushing button **Add..** a CAN message can be added. All CAN data bases are shown, so a CAN message can be selected and added.  
+
+By selecting **Raw** ![Tx add raw](img/tx_add_raw.jpg) and pushing **Add** (or just double clicking **Raw**) a CAN Id can be defined by hand (hex value) ![Tx add raw input](img/tx_add_raw_input.jpg)
+
+## CAN logging
+
+CAN traffic can be logged to file in well known ASC format. Via Menu:
+~~~ 
+CAN => Log to file ...
+~~~
+or by toolbar ![logging](img/toolbar_log.jpg)  
+
+Logging files are stored in folder `log` where file name is generated containing the time stamp. 
+
 
 ## CAN hardware configuration
 
@@ -133,8 +200,10 @@ CAN signals can be shown as graphs by:
 ~~~ 
 CAN => Graph...
 ~~~
+or by toolbar 
+![tb graph](img/toolbar_graph.jpg)
 
-![Signal graphs](img/graph.jpg)
+![graph](img/graph.jpg)
 
 Enabling signals as graphs is done by the check boxes in the left tree view in the main window.
 
@@ -155,6 +224,7 @@ C++ files are managed by:
 ~~~ 
 CAN => Programming
 ~~~
+or by toolbar ![CAN programming](img/toolbar_canprog.jpg)
 
 ![CAN programming](img/programming.jpg)
 
@@ -186,6 +256,7 @@ Following CAN diagnostics can be performed:
 - measurement data (cyclic and single read)
 - identification
 - import PDX files
+- send tester present ![TP](img/toolbar_tester_present.jpg)
 
 Fault memory window:
 
@@ -203,5 +274,16 @@ CAN statistics are show in separate window by:
 CAN => Statistics
 ~~~
 
+or by toolbar ![stats](img/toolbar_stats.jpg)  
+
 ![Statistics](img/statistics.jpg)
 
+## Tips
+### How to flash SuperCAN firmware on Adafruit Feather M4 CAN Express (on Windows)
+- download SuperCAN firmware file supercan-firmware.tar.xz from https://github.com/jgressmann/supercan/releases/tag/latest-master
+- Unpack supercan-firmware.tar.xz (7-Zip could be used), needed file is supercan.uf2
+- plug in device
+- push the button on the device twice
+- a drive "FTHRBOOT" will show up in file explorer
+- drop the file supercan.uf2 on this drive
+- after 10 seconds replug the device

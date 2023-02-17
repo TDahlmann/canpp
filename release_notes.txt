@@ -6,6 +6,15 @@ Copyright (C) 2011-2023 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.14:
+############
+- DBC import much faster
+- DBC import fixed for crashing on many big DBC's
+- ARXML import fixes
+- cooperative bus access with other apps enhanced and fixed
+- user manual expanded a lot
+
+############
 can++ 4.3.12:
 ############
 - remote control for start, stop and generic commands 

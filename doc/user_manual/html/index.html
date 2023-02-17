@@ -58,11 +58,27 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#trace-view" class="nav-link">Trace view</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#import-trace-file" class="nav-link">Import Trace file</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#replay-trace-file" class="nav-link">Replay Trace file</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#can-data-bases" class="nav-link">CAN data bases</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#can-transmit" class="nav-link">CAN transmit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#can-logging" class="nav-link">CAN logging</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -94,6 +110,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#tips" class="nav-link">Tips</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -114,6 +134,52 @@
 - Open Source Hardware: <a href="https://github.com/RudolphRiedel/USB_CAN-FD">USB_CAN-FD</a>
 - Off the shelf: <a href="https://www.adafruit.com/product/4759">Adafruit Feather M4 CAN Express</a> (simple <a href="#tips">drag &amp; drop</a> of firmware)</p>
 <p>CAN++ can be just started (no installation).</p>
+<h2 id="trace-view">Trace view</h2>
+<p><img alt="Trace view" src="img/main3.jpg" /></p>
+<p>In trace view following features can be used:</p>
+<ul>
+<li>
+<p>toggle between <strong>update view</strong> and <strong>stream view</strong> <img alt="stream view" src="img/toolbar_stream_view.jpg" /></p>
+<ul>
+<li>update view: displays each message on one row an updates its values</li>
+<li>stream view: one row for each incoming message, so it is filling the screen quickly (scroll view)</li>
+</ul>
+</li>
+<li>
+<p>switch on <strong>delta time mode</strong> <img alt="stream view" src="img/toolbar_delta_time.jpg" /> so time values show the difference to last message of same Id. So this shows the cycle time.</p>
+</li>
+<li>
+<p>sort view by clicking on headers of each column</p>
+</li>
+<li>
+<p>right click shows menu to:</p>
+<ul>
+<li>clear view</li>
+<li>"copy all" =&gt; copy trace view contents to clip board</li>
+<li>import a trace</li>
+<li>"Go to..." =&gt; go to a certain time in stream view</li>
+</ul>
+</li>
+</ul>
+<h2 id="import-trace-file">Import Trace file</h2>
+<p>Trace files (.asc or .blf) can be imported and are shown in trace window. Via menu:</p>
+<pre><code>CAN =&gt; Trace import... 
+</code></pre>
+<p>or by right clicking in trace view window</p>
+<p>Also signals from trace can be shown in graphical view either by:<br />
+    1. pressing <strong>Reload</strong> button in graphn windows after import<br />
+    2. selecting signals for graphical showing before import (checkbox in main window left tree view)  </p>
+<p>Option 2. is the best option for big trace files</p>
+<h2 id="replay-trace-file">Replay Trace file</h2>
+<p>Trace files (.asc or .blf) can be imported and replayed. Via menu:</p>
+<pre><code>CAN =&gt; Replay =&gt; Trace file... 
+</code></pre>
+<p>Loop mode can be set to replay the file continuously (on reaching end of file it is started from beginning):</p>
+<pre><code>CAN =&gt; Replay =&gt; Loop
+</code></pre>
+<p>Replay buffer can be cleared by:</p>
+<pre><code>CAN =&gt; Replay =&gt; Clear replay buffer
+</code></pre>
 <h2 id="can-data-bases">CAN data bases</h2>
 <p>CAN data bases files (<em>.dbc, </em>.arxml) can be imported via menu:</p>
 <pre><code>CAN =&gt; CAN Data Base =&gt; Import... 
@@ -127,6 +193,7 @@
 <p>CAN messages can be transmitted via menu:</p>
 <pre><code>CAN =&gt; Transmit...
 </code></pre>
+<p>or by toolbar <img alt="tx" src="img/toolbar_tx.jpg" /></p>
 <p>The features are:</p>
 <ul>
 <li>send options:<ul>
@@ -143,6 +210,15 @@
 <p><img alt="Tx" src="img/tx.jpg" /></p>
 <p>By clicking on cell in column "<strong>Wave</strong>" for a signal a wave form can be specified for a signal instead of using a static value:</p>
 <p><img alt="Tx wave" src="img/wave.jpg" /></p>
+<h3 id="add-a-can-message-to-transmit-list">Add a CAN message to transmit list</h3>
+<p>By pushing button <strong>Add..</strong> a CAN message can be added. All CAN data bases are shown, so a CAN message can be selected and added.  </p>
+<p>By selecting <strong>Raw</strong> <img alt="Tx add raw" src="img/tx_add_raw.jpg" /> and pushing <strong>Add</strong> (or just double clicking <strong>Raw</strong>) a CAN Id can be defined by hand (hex value) <img alt="Tx add raw input" src="img/tx_add_raw_input.jpg" /></p>
+<h2 id="can-logging">CAN logging</h2>
+<p>CAN traffic can be logged to file in well known ASC format. Via Menu:</p>
+<pre><code>CAN =&gt; Log to file ...
+</code></pre>
+<p>or by toolbar <img alt="logging" src="img/toolbar_log.jpg" />  </p>
+<p>Logging files are stored in folder <code>log</code> where file name is generated containing the time stamp. </p>
 <h2 id="can-hardware-configuration">CAN hardware configuration</h2>
 <h3 id="activate-hardware">Activate hardware</h3>
 <p>Select connected hardware from list</p>
@@ -298,7 +374,9 @@
 <p>CAN signals can be shown as graphs by:</p>
 <pre><code>CAN =&gt; Graph...
 </code></pre>
-<p><img alt="Signal graphs" src="img/graph.jpg" /></p>
+<p>or by toolbar 
+<img alt="tb graph" src="img/toolbar_graph.jpg" /></p>
+<p><img alt="graph" src="img/graph.jpg" /></p>
 <p>Enabling signals as graphs is done by the check boxes in the left tree view in the main window.</p>
 <h2 id="can-programming-in-c">CAN programming in C++</h2>
 <p>CAN++ comes with an IDE and an integrated C++ compiler. So not further installation is needed. For each C++ file a separate DLL will be created on compiling. Each DLL is loaded when pushing button <strong>Start</strong> in CAN++. Please have a look at the example C++ file "<strong>ECU_main.cpp</strong>" in folder examples/simulation to see the features of CAN programming which are:</p>
@@ -314,6 +392,7 @@
 <p>C++ files are managed by:</p>
 <pre><code>CAN =&gt; Programming
 </code></pre>
+<p>or by toolbar <img alt="CAN programming" src="img/toolbar_canprog.jpg" /></p>
 <p><img alt="CAN programming" src="img/programming.jpg" /></p>
 <p>The checkbox <strong>Active</strong> is used to enable/disable CAN simulation by C++. Files can be imported or created. Existing files can be double clicked to open the IDE. A specific Channel can be selected from drop down in column <strong>Channel</strong>. Default "All" means that all received CAN traffic is routed to corresponding C++ file.</p>
 <p>In the IDE you get context drop down menus for CAN data base variables like in following image:</p>
@@ -332,6 +411,7 @@
 <li>measurement data (cyclic and single read)</li>
 <li>identification</li>
 <li>import PDX files</li>
+<li>send tester present <img alt="TP" src="img/toolbar_tester_present.jpg" /></li>
 </ul>
 <p>Fault memory window:</p>
 <p><img alt="Fault memory" src="img/faultmem.jpg" /></p>
@@ -341,7 +421,19 @@
 <p>CAN statistics are show in separate window by:</p>
 <pre><code>CAN =&gt; Statistics
 </code></pre>
-<p><img alt="Statistics" src="img/statistics.jpg" /></p></div>
+<p>or by toolbar <img alt="stats" src="img/toolbar_stats.jpg" />  </p>
+<p><img alt="Statistics" src="img/statistics.jpg" /></p>
+<h2 id="tips">Tips</h2>
+<h3 id="how-to-flash-supercan-firmware-on-adafruit-feather-m4-can-express-on-windows">How to flash SuperCAN firmware on Adafruit Feather M4 CAN Express (on Windows)</h3>
+<ul>
+<li>download SuperCAN firmware file supercan-firmware.tar.xz from https://github.com/jgressmann/supercan/releases/tag/latest-master</li>
+<li>Unpack supercan-firmware.tar.xz (7-Zip could be used), needed file is supercan.uf2</li>
+<li>plug in device</li>
+<li>push the button on the device twice</li>
+<li>a drive "FTHRBOOT" will show up in file explorer</li>
+<li>drop the file supercan.uf2 on this drive</li>
+<li>after 10 seconds replug the device</li>
+</ul></div>
             </div>
         </div>
 
@@ -422,5 +514,5 @@
 
 <!--
 MkDocs version : 1.4.2
-Build Date UTC : 2023-01-03 10:26:31.736003+00:00
+Build Date UTC : 2023-01-19 15:26:54.625146+00:00
 -->
