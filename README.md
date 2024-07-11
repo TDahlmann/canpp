@@ -11,6 +11,7 @@ Furthermore:
 There are several devices which are supported by SuperCAN firmware and can be used with CAN++. For example:
 - Open Source Hardware: [USB_CAN-FD](https://github.com/RudolphRiedel/USB_CAN-FD)
 - Off the shelf: [Adafruit Feather M4 CAN Express](https://www.adafruit.com/product/4759) (simple [drag & drop](#tips) of firmware)
+CAN++ also can connect to CAN hardware via TCP/IP with an own defined protocol (see TCP/IP chapter below). An example implementation is included.
 
 CAN++ can be just started (no installation).   
 The user manual is located in sub folder `doc/user_manual` (Markdown and HTML version, work in progress). 
@@ -62,9 +63,9 @@ This little server has to run on the Linux device. CAN++ connects to this server
 Following menu items can be used to connect:
 
 Settings => Hardware Select:
-=> BeagleBone USB: 192.168.7.2
-=> Wlan: 192.168.10.1
-=> IP Address: self assigned IP address on server side
+- BeagleBone USB: 192.168.7.2
+- Wlan: 192.168.10.1
+- IP Address: self assigned IP address on server side
 
 ![Main screen](doc/screens/canpp_socketcan.jpg)
 ![Main screen](doc/screens/multi_canpp_tcp_arch.jpg)
