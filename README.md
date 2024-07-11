@@ -39,31 +39,8 @@ CAN traces can be generated, imported and replayed (*.asc format). Import and re
 - Timers (can be used for cyclic sending of CAN messages)
 - print text
 - integrated IDE and integrated C++ Compiler (DMC)
-- react on key presses
-- react on commands received from remote client program (See chapter "Remote control")
 
 ![Main screen](doc/screens/canpr_context_with_build.jpg)
-
-Instead of the CAN++ IDE you can use your own of course. After first compiling of code CAN++ generates C++ classes for all CAN messages and signals (see canl/canl_data.cpp) so another IDE will give context input support too.
-
-## Remote control
-
-CAN++ can be remote controlled. To do so start CAN++ with option `-server` on command line:
-~~~
-can++.exe -server
-~~~
-Currently following actions can be taken:  
-
-- Start CAN bus  
-- Stop CAN bus  
-- Send a generic command to C++ simulation, which can be used to trigger self-defined actions, examples may be:  
-
-    - call a test function  
-    - set a global variable to switch behaviour  
-    - send a CAN message provided by command string  
-    - etc.  
-
-Please see client example source code (Python, C# and C++) in folder examples/remote_control.
 
 ## CAN statistics
 
@@ -77,6 +54,20 @@ Please see client example source code (Python, C# and C++) in folder examples/re
 
 ![Main screen](doc/screens/faultmem.jpg)
 ![Main screen](doc/screens/measurements.jpg)
+
+## TCP/IP connection to CAN hardware
+
+CAN++ can connect over TCP/IP to CAN hardware. For this an own protocol was implemented. For this protocol a implementation for connecting to a Linux device is implemented in folder "can2win".
+This little server has to run on the Linux device. CAN++ connects to this server and transmitts and receives CAN data over the connection. The server itself makes a [SocketCan](https://de.wikipedia.org/wiki/SocketCAN#:~:text=SocketCAN%20ist%20eine%20Sammlung%20von,Level%20CAN%20Framework%20(LLCF).) connection to the CAN hardware attached to the linux device. This for example may be a simple Raspberry Pi CAN hookup board. Multiple channels can be transported. Even more multiple CAN++ PC's can connect to this server.
+Following menu items can be used to connect:
+
+Settings => Hardware Select:
+=> BeagleBone USB: 192.168.7.2
+=> Wlan: 192.168.10.1
+=> IP Address: self assigned IP address on server side
+
+![Main screen](doc/screens/canpp_socketcan.jpg)
+![Main screen](doc/screens/multi_canpp_tcp_arch.jpg)
 
 ## Installation
 

@@ -6,6 +6,11 @@ Copyright (C) 2011-2023 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.16:
+############
+- support for conecting to CAN hardware over TCP/IP
+
+############
 can++ 4.3.15:
 ############
 - Skip disclaimer in server mode

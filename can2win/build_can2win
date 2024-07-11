@@ -1,0 +1,2 @@
+c++ can2win.cpp -lpthread -o can2win
+
