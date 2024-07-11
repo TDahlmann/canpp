@@ -11,6 +11,7 @@ Furthermore:
 There are several devices which are supported by SuperCAN firmware and can be used with CAN++. For example:
 - Open Source Hardware: [USB_CAN-FD](https://github.com/RudolphRiedel/USB_CAN-FD)
 - Off the shelf: [Adafruit Feather M4 CAN Express](https://www.adafruit.com/product/4759) (simple [drag & drop](#tips) of firmware)
+
 CAN++ also can connect to CAN hardware via TCP/IP with an own defined protocol (see TCP/IP chapter below). An example implementation is included.
 
 CAN++ can be just started (no installation).   
