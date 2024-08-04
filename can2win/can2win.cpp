@@ -384,6 +384,8 @@ void *sockcan_handler(void *socketDesc)
     
     printf("Exit sockcan_handler() for sock %d\n", sock);
 
+    return NULL;
+
 } 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -735,7 +737,7 @@ errSetup:
         ::close(sockfd[i]);
 errSocket:  
      
-    printf("Exit write_handler() for sock %d and sockcan %d\n", sock, sockfd);
+    printf("Exit write_handler() for sock %d and sockcan %ld\n", sock, (unsigned long) sockfd);
     // erase sock from map
     pthread_mutex_lock(&mutexClientSockMap);    
     if (g_clientSockMap[sock])
