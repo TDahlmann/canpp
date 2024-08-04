@@ -773,7 +773,7 @@ void *accept_handler(void *listenDesc)
     //connfd = accept(localListenfd, (struct sockaddr *)NULL, NULL);
     
     printf("\n wait for clients\n");
-    char *clientIp;
+    char clientIp[1024];
     while (connfd > 0)
     {        
         //char *clientIp = new char[20];
