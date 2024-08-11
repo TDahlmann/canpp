@@ -16,8 +16,8 @@
 
 # How to enable can2win service at boot
 
-sudo su
-chmod +x can2win.service
-cp can2win.service /etc/systemd/system
-sudo systemctl daemon-reload
-sudo systemctl enable can2win.service
+sudo su  
+chmod +x can2win.service  
+cp can2win.service /etc/systemd/system  
+sudo systemctl daemon-reload  
+sudo systemctl enable can2win.service  
