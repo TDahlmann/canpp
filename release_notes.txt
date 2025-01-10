@@ -6,6 +6,11 @@ Copyright (C) 2011-2023 Thomas Dahlmann
 Releases Notes
 ------------------------------------------------------------------------
 ############
+can++ 4.3.17:
+############
+- bugfix Motorola/BigEndian format in DBC file when signal stop bit is on a byte boundary
+
+############
 can++ 4.3.16:
 ############
 - support for conecting to CAN hardware over TCP/IP
