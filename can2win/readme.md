@@ -16,8 +16,12 @@
 
 # How to enable can2win service at boot
 
-sudo su
-chmod +x can2win.service
-cp can2win.service /etc/systemd/system
-sudo systemctl daemon-reload
-sudo systemctl enable can2win.service
+Edit the path to can2win binary in file can2win.service. Then do following commands to start can2win at boot automatically:
+
+sudo su  
+chmod +x can2win.service  
+cp can2win.service /etc/systemd/system  
+sudo systemctl daemon-reload  
+sudo systemctl enable can2win.service  
+
+Also make sure that your socketcan device like "can0" is started at boot.
