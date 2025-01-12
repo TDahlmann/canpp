@@ -35,13 +35,12 @@ CAN traces can be generated, imported and replayed (*.asc format). Import and re
 
 ## CAN simulation in C++
 
-- compiler and IDE included, no installation needed
+- compiler and IDE integrated, no installation needed
 - one .cpp file per CAN node (see Example ECU_main.cpp)
 - react on CAN-Messages (::onMessage()) or signals
 - send CAN messages
 - Timers (can be used for cyclic sending of CAN messages)
 - print text
-- integrated IDE and integrated C++ Compiler (DMC)
 
 ![Main screen](doc/screens/canpr_context_with_build.jpg)
 
