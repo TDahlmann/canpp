@@ -59,7 +59,7 @@ CAN traces can be generated, imported and replayed (*.asc format). Import and re
 
 ## TCP/IP connection to CAN hardware
 
-CAN++ can connect over TCP/IP to CAN hardware. For this an own protocol was implemented. For this protocol a implementation for connecting to a Linux device is implemented in folder "can2win".
+CAN++ can connect over TCP/IP to CAN hardware. For this an own protocol was developed. A protocol implementation for connecting to a Linux device is located in folder "can2win".
 This little server has to run on the Linux device. CAN++ connects to this server and transmitts and receives CAN data over the connection. The server itself makes a [SocketCan](https://de.wikipedia.org/wiki/SocketCAN#:~:text=SocketCAN%20ist%20eine%20Sammlung%20von,Level%20CAN%20Framework%20(LLCF).) connection to the CAN hardware attached to the linux device. This for example may be a simple Raspberry Pi CAN hookup board. Multiple channels can be transported. Even more multiple CAN++ PC's can connect to this server.
 Following menu items can be used to connect:
 
