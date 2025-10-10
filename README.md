@@ -15,7 +15,7 @@ There are several devices which are supported by SuperCAN firmware and can be us
 CAN++ also can connect to CAN hardware via TCP/IP with an own defined protocol (see TCP/IP chapter below). An example implementation for [SocketCan](https://de.wikipedia.org/wiki/SocketCAN#:~:text=SocketCAN%20ist%20eine%20Sammlung%20von,Level%20CAN%20Framework%20(LLCF).) is included.
 
 CAN++ can be just started (no installation).   
-The user manual is located in sub folder `doc/user_manual` (Markdown and HTML version, work in progress). 
+The user manual is located in sub folder `doc/user_manual` (Markdown and HTML version, work in progress) and is accessable via help menu too.
 
 
 ![Main screen](doc/screens/main2.jpg)
