@@ -1,7 +1,9 @@
  CAN++
 
 ## Overview
-CAN++ is a free Windows program for receiving, transmitting and analyzing (*.asc, *.blf) CAN bus messages (CAN Classic and **CAN FD**) for using with [SuperCAN](https://github.com/jgressmann/supercan) devices or without CAN hardware (virtual bus). After import of CAN data base files (*.**dbc**, *.**arxml**) CAN signals are shown in symbolic form. Signals can be presented as graphics (wave forms) too.
+CAN++ is a free Windows program for receiving, transmitting and analyzing (*.asc, *.blf) CAN bus messages (CAN Classic and **CAN FD**) for using with [SuperCAN](https://github.com/jgressmann/supercan) devices, with CAN devices connected via TCP/IP (implementation for [SocketCan](https://de.wikipedia.org/wiki/SocketCAN#:~:text=SocketCAN%20ist%20eine%20Sammlung%20von,Level%20CAN%20Framework%20(LLCF).) included) or without CAN hardware (virtual bus).
+
+After import of CAN data base files (*.**dbc**, *.**arxml**) CAN signals are shown in symbolic form (update or stream view). Signals can be presented as graphics (wave forms) too.
 
 Furthermore:
 - **CAN simulation** is possible by programming CAN behaviour in C++. 
@@ -15,7 +17,7 @@ There are several devices which are supported by SuperCAN firmware and can be us
 CAN++ also can connect to CAN hardware via TCP/IP with an own defined protocol (see TCP/IP chapter below). An example implementation is included.
 
 CAN++ can be just started (no installation).   
-The user manual is located in sub folder `doc/user_manual` (Markdown and HTML version, work in progress). 
+The user manual is located in sub folder `doc/user_manual` (Markdown and HTML version, work in progress) and is accessable via help menu too.
 
 
 ![Main screen](doc/screens/main2.jpg)
