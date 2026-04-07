@@ -18,15 +18,13 @@ Known Issues:
 that you use path names with "A-Za-z0-9_" only. Otherwise used Digital
 Mars C++ Compiler may fail to compile.
 
-(2) Sometimes mode "Virtual Bus" crashes on Button "Stop" when showing signal graphs.
-
 License:
 --------
 
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2021 Thomas Dahlmann <tomydahl@gmail.com>
+ * Copyright (c) 2026 Thomas Dahlmann <tomydahl@gmail.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal

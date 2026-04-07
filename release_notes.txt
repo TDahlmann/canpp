@@ -1,10 +1,19 @@
 ------------------------------------------------------------------------
 can++ - Freeware for sniffing/simulation of CAN traffic and diagnostics
-Copyright (C) 2011-2023 Thomas Dahlmann
+Copyright (C) 2011-2026 Thomas Dahlmann
 ------------------------------------------------------------------------
 
 Releases Notes
 ------------------------------------------------------------------------
+############
+can++ 4.3.18:
+############
+- signal graph ehancements:
+  - graph stacking (vertical) to separate signal graphs
+  - reload all data on big traces
+  - time measurements between to points in time
+- bugfix diagnostics only select
+  
 ############
 can++ 4.3.17:
 ############
